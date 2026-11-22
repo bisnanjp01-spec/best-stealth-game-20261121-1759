@@ -1,0 +1,66 @@
+/* Lantern Thief — The Ink Vault: page chrome around the canvas. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #0b0a12; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #e8ddc0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+#wrap { width: 984px; max-width: 100vw; padding: 12px 12px 20px; }
+#topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 4px 2px 10px;
+}
+h1 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #f2c14e;
+  text-shadow: 0 0 18px rgba(242, 193, 78, .45);
+}
+h1 span { font-size: 14px; letter-spacing: 2px; color: #b9a06a; }
+#hud { display: flex; gap: 14px; font-size: 14px; letter-spacing: 1px; }
+#hud span { background: #171425; border: 1px solid #3a3157; border-radius: 6px; padding: 3px 9px; }
+#hud-alert { color: #8fe3a0; font-weight: bold; }
+#hud-alert.suspicious { color: #f2c14e; }
+#hud-alert.alarm { color: #ff5d5d; animation: blink 0.7s steps(2) infinite; }
+body.shot #hud-alert.alarm { animation: none; opacity: 1; }
+@keyframes blink { 50% { opacity: .35; } }
+#stage { position: relative; width: 960px; max-width: 100%; }
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #14121f;
+  border: 2px solid #3a3157;
+  border-radius: 8px;
+  cursor: crosshair;
+}
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  border-radius: 8px;
+}
+#overlay .panel {
+  background: rgba(11, 10, 18, .88);
+  border: 1px solid #f2c14e;
+  border-radius: 10px;
+  padding: 26px 34px;
+  max-width: 560px;
+}
+#overlay .panel b { color: #f2c14e; }
+#overlay h2 { color: #f2c14e; letter-spacing: 3px; font-size: 26px; margin-bottom: 10px; }
+#overlay p { font-size: 15px; line-height: 1.55; color: #e8ddc0; margin: 6px 0; }
+#overlay .keys { color: #b9a06a; font-size: 13px; }
+#help { padding-top: 10px; font-size: 13px; line-height: 1.5; color: #b9a06a; }
+#help b { color: #e8ddc0; }
